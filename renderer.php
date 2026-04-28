@@ -246,9 +246,11 @@ class qtype_regexp_renderer extends qtype_renderer {
         // Teacher can always view alternate answers; student can only view if question is set to studentshowalternate.
         $canview = question_has_capability_on($question, 'view');
         if ($question->studentshowalternate || $canview) {
-            $displayresponses .= print_collapsible_region_start('expandalternateanswers', 'id'.
-                            $question->id, get_string('showhidealternate', 'qtype_regexp'),
-                            'showhidealternate', true, true);
+            $displayresponses .= html_writer::start_tag('details', [
+                'class' => 'expandalternateanswers',
+                'id'    => 'id' . $question->id,
+            ]);
+            $displayresponses .= html_writer::tag('summary', get_string('showhidealternate', 'qtype_regexp'));
             foreach ($alternateanswers as $key => $alternateanswer) {
                 if ($key == 1) { // First (correct) Answer.
                     if (count($alternateanswers) > 1) {
@@ -262,7 +264,7 @@ class qtype_regexp_renderer extends qtype_renderer {
                     }
                 }
             }
-            $displayresponses .= print_collapsible_region_end(true);
+            $displayresponses .= html_writer::end_tag('details');
         }
         return $displayresponses;
     }
