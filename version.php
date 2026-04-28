@@ -32,6 +32,6 @@ $plugin->dependencies = [
 $plugin->version  = 2026042800;
 // Require Moodle 5.1.0.
 // Require PHP 8.
-$plugin->requires = 2025110300;
+$plugin->requires = 2025100600;
 $plugin->release = '5.1.0';
 $plugin->maturity = MATURITY_STABLE;
