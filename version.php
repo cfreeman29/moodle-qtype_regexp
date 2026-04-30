@@ -26,8 +26,8 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'qtype_regexp';
 $plugin->dependencies = [
-    'qbehaviour_regexpadaptivewithhelp'   => 2024050200,
-    'qbehaviour_regexpadaptivewithhelpnopenalty'  => 2024050200,
+    'qbehaviour_regexpadaptivewithhelp'   => 2026042800,
+    'qbehaviour_regexpadaptivewithhelpnopenalty'  => 2026042800,
 ];
 $plugin->version  = 2026042800;
 // Require Moodle 5.1.0.
